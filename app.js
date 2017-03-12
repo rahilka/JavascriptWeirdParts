@@ -1,64 +1,42 @@
-// // function b() {
-// //   // var myVar;
-// //   console.log('expect: undefined', myVar)
-// // }
-// //
-// // function a() {
-// //   var myVar = 2;
-// //   console.log('expect: 2', myVar);
-// //
-// //   //2
-// //
-// //
-// //   b();
-// //   console.log('expect: 2', myVar);
-// //
-// // }
-// //
-// // var myVar = 1;
-// // console.log('expect: 1', myVar);
-// //
-// // //1
-// //
-// // a();
-// // console.log('expect: 1', myVar);
-// //
-// //
-// // //
-//
-// //
-// // console.log(a);
-// //
-// // if (true) {
-// //   let a = 1;
-// // }
-//
-// // let a = 2;
-//
-//
-//
-// //a is not defined
-//
-// let a = 2;
+// var a = 3 + 4 * 5;
 // console.log(a);
 
 
-//long running function
-function waitThreeSeconds() {
-  var ms = 3000 + new Date().getTime();
+// var a = 2, b = 3, c = 4;
+//
+// a = b = c;
+// //a=4
+//
+// console.log(a);
+// //4
+// console.log(b);
+// //4
+// console.log(c);
+// //4
+//
+// var a = 1 + '123';
+// console.log(a);
+// console.log(typeof(a));
 
-  while(new Date() < ms) {
-    console.log('finished function');
-  }
-}
 
-function clickHandler() {
-  console.log('click event!');
-}
+// console.log(3 < 2 < 1);
 
-//listen for the click event
+//
+// var a ;
+//
+// if(a) {
+//   console.log('A has a value!');
+// }else {
+//   console.log('A is undefined');
+// }
 
-document.addEventListener('click', clickHandler);
+// function greet(name) {
+//   name = name || '<Your name here>'
+//   console.log('Hello ' + name);
+//
+// }
+//
+// greet('Rahilka');
+// greet();
 
-waitThreeSeconds();
-console.log('finished execution');
+console.log(libraryName);
