@@ -1,42 +1,73 @@
-// var a = 3 + 4 * 5;
-// console.log(a);
-
-
-// var a = 2, b = 3, c = 4;
+// var person = new Object();
 //
-// a = b = c;
-// //a=4
+// person["firstname"] = "Rahilka";
+// person["lastname"] = "Simonova";
 //
-// console.log(a);
-// //4
-// console.log(b);
-// //4
-// console.log(c);
-// //4
+// var firstNameProperty = "firstname";
 //
-// var a = 1 + '123';
-// console.log(a);
-// console.log(typeof(a));
-
-
-// console.log(3 < 2 < 1);
-
+// console.log(person);
+// console.log(person[firstNameProperty]);
+// console.log(person.firstname);
 //
-// var a ;
+// person.address = new Object();
 //
-// if(a) {
-//   console.log('A has a value!');
-// }else {
-//   console.log('A is undefined');
-// }
-
-// function greet(name) {
-//   name = name || '<Your name here>'
-//   console.log('Hello ' + name);
+// person.address.street = "Manco Maliminov";
 //
+// var person = {
+//    firstname: 'Rahilka',
+//    lastname: 'Simonova',
+//    address: {
+//      street: "Manco Maliminov",
+//      city: "Negotino",
+//      state: "Macedonia"
+//    }
+// };
+//
+// function greet(person) {
+//   console.log('Hi ' + person.firstname);
 // }
 //
-// greet('Rahilka');
-// greet();
-
-console.log(libraryName);
+// greet(person);
+//
+// greet({
+//   firstname: "Vlatko",
+//   lastname: "Jordanov"
+// });
+//
+// console.log(person);
+//
+// var greet = 'Hello!';
+// var greet = 'Hola!';
+//
+// console.log(greet);
+//
+// var english = {
+//   greetings: {
+//     basic: 'Hello!'
+//   }
+// };
+// var spanish = {};
+//
+// english.greetings.greet = 'Hello!';
+// spanish.greet = 'Hola!';
+//
+// console.log(english);
+// console.log(spanish);
+//
+// var objectLiteral = {
+//   firstname: 'Rahilka',
+//   isAProgrammer: true
+// };
+//
+// console.log(JSON.stringify(objectLiteral));
+//
+// var jsonValue = JSON.parse('{"firstname": "Rahilka", "age": 23}')
+// console.log(jsonValue);
+// 
+// function greet () {
+//   console.log('HI');
+// }
+//
+// greet.language = 'english';
+//
+// console.log(greet.language);
