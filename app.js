@@ -1,19 +1,41 @@
-function makeGreeting(language) {
+function sayHiLater() {
 
-  return function(firstname, lastname) {
+  var greeting = 'Hi!';
 
-    if(language === 'en') {
-      console.log('Hello ' + firstname + ' ' + lastname);
-    }
+  setTimeout(function() {
 
-    if(language === 'es') {
-      console.log('Hola ' + firstname + ' ' + lastname);
-    }
+    console.log(greeting);
 
-  }
+  }, 3000);
 
 }
 
+sayHiLater();
 
-var greetEnglish = makeGreeting('en')('Rahilka', 'Simonova');
-var greetSpanish = makeGreeting('es')('Ljubica', 'Simonova');
+//jQuery uses function expressions and first class functions!
+// $("button").click(function() {
+//
+// });
+
+
+function tellMeWhenDone(callback) {
+
+  var a = 1000;
+  var b = 2000;
+
+  callback();
+
+}
+
+tellMeWhenDone(function() {
+
+  console.log('Im done');
+
+});
+
+
+tellMeWhenDone(function() {
+
+  console.log('All done..');
+
+});
