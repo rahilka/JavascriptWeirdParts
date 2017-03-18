@@ -1,55 +1,44 @@
-var person = {
-  firstname: 'Rahilka',
-  lastname: 'Simonova',
-  getFullName: function() {
-    var fullname = this.firstname + ' ' + this.lastname;
-    return fullname;
-  }
+function mapForEach(arr, fn) {
+
+  var newArr = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    newArr.push(
+      fn(arr[i])
+    )
+  };
+
+  return newArr;
 }
 
-var logName = function(lang1, lang2) {
-  console.log('Logged: ' + this.getFullName());
-  console.log('Arguments: ', arguments);
-  console.log('-----------');
+function passLimiter(fn, limiter) {
+  return fn.bind(this, limiter);
 }
 
-var logPersonName = logName.bind(person);
-//bind creates copy of the function, without executing
+var checkLimiterSimplified = function (limiter) {
+  return checkPastLimit.bind(this, limiter)
+};
 
-logPersonName('en');
+var arr1 = [1,2,3];
+console.log(arr1);
 
-//call executes the function
-logName.call(person, 'en', 'es');
-//apply executes the function too
-logName.apply(person, ['en', 'es']);
+var arr2 = mapForEach(arr1, function(item) {
+  return item * 2;
+});
+console.log(arr2);
 
-//THE ONLY DIFFERENCE between CALL and APPLY is
-//that apply wants the argument in an array
-
-(function(lang1, lang2) {
-  console.log('Logged: ' + this.getFullName());
-  console.log('Arguments: ', arguments);
-  console.log('-----------');
-}).apply(person, ['en', 'mk']);
+var arr3 = mapForEach(arr1, function(item) {
+  return item > 2;
+});
+console.log(arr3);
 
 
-//function borrowing
-
-var person2 = {
-  firstname: 'Ljubica',
-  lastname: 'Simonova'
+var checkPastLimit = function(limiter, item) {
+  return item > limiter;
 }
 
-console.log(person.getFullName.apply(person2));
+var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1));
+console.log(arr4);
 
-
-// functon currying
-
-function multiply(a, b) {
-  return a * b;
-}
-
-var multipleByTwo = multiply.bind(this, 2);
-//THE VARIABLE a WILL ALWAYS BE 2
-
-console.log(multipleByTwo(5));
+var arr5 = mapForEach(arr1, checkLimiterSimplified(1));
+console.log(arr5);
