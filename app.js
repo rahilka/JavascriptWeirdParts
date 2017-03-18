@@ -1,21 +1,32 @@
-var
-    // firstname of the person
-    firstname,
-
-    //lastname of the person
-    lastname,
-
-    //the language
-    //can be en or es
-    language;
-
-var person = {
-  //the firstname
-  firstname: 'Rahilka',
-
-  //the lastname
-  //required
-  lastname: 'Simonova'
+//function statement
+function greet(name) {
+  console.log('Hello ' + name);
 }
 
-console.log(person);
+greet('Rahilka');
+
+//using a function expression
+var greetFunc = function(name) {
+  console.log('Hello ' + name);
+};
+
+greetFunc('Rahilka');
+
+//using and Immediately Invoked FUnction expression// IIFE
+var greeting = function(name) {
+
+  return ('Hello ' + name);
+
+}('Rahilka');
+
+console.log(greeting);
+
+
+
+
+(function(name) {
+
+  var greetings = 'Hello ';
+  console.log(greetings + name);
+
+}('Rahilka'));  //IIFE
