@@ -1,23 +1,9 @@
-function greet(firstname, lastname, language) {
+function getPerson() {
 
-  language = language || 'en';
-
-  if(language === 'en') {
-    console.log('Hello ' + firstname + ' ' + lastname);
+  return {
+    name: 'Rahilka'
   }
 
-  if(language === 'es') {
-    console.log('Hola ' + firstname + ' ' + lastname);
-  }
 }
 
-function greetEnglish(firstname, lastname) {
-  greet(firstname, lastname, 'en');
-}
-
-function greetSpanish(firstname, lastname) {
-  greet(firstname, lastname, 'es');
-}
-
-greetEnglish('Rahilka', 'Simonova');
-greetSpanish('Rahilka', 'Simonova');
+console.log(getPerson());
