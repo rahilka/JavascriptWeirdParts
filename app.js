@@ -24,9 +24,12 @@ console.log(greeting);
 
 
 
-(function(name) {
+(function(global, name) {
 
   var greetings = 'Hello ';
+  global.greetings = 'Heloooo';
   console.log(greetings + name);
 
-}('Rahilka'));  //IIFE
+}(window, 'Rahilka'));  //IIFE
+
+console.log(greetings);
