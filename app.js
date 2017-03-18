@@ -63,11 +63,108 @@
 //
 // var jsonValue = JSON.parse('{"firstname": "Rahilka", "age": 23}')
 // console.log(jsonValue);
-// 
-// function greet () {
-//   console.log('HI');
+// greet();
+//
+// function greet() {
+//   console.log('hi');
+// };
+//
+// var anonymous = function() {
+//   console.log('hi');
+// };
+//
+// anonymous();
+//
+//
+// function log(a) {
+//     a();
 // }
 //
-// greet.language = 'english';
+// log(function () {
+//   console.log('hi');
+// });
+
+
+ //by value - primitives
+
+//  var a = 3;
+//  var b;
 //
-// console.log(greet.language);
+//  b = a;
+//  a = 2;
+//
+//  console.log(a);
+//  console.log(b);
+//
+//  //by reference - all objects (including function)
+//
+//
+//  var c = {
+//
+//    greeting: 'hi'
+//
+//  };
+//
+// var d;
+//
+// d = c;
+//
+// c.greeting = 'hello';
+//
+// console.log(c);
+// console.log(d);
+//
+// //by reference (even as parameters)
+//
+// function changeGreeting(obj) {
+//   obj.greeting = 'Hola';
+// }
+//
+// changeGreeting(d);
+// console.log(c);
+// console.log(d);
+//
+// //equals operator sets up new memory space
+// // (new address)
+//
+// c = { greeting: 'howdy' };
+// console.log(c);
+// console.log(d);
+
+function a() {
+  console.log(this);
+  this.newVariable = 'hello';
+}
+
+var b = function() {
+  console.log(this);
+}
+
+a();
+
+console.log(newVariable);
+
+b();
+
+var c = {
+
+  name: 'The c object',
+  log: function() {
+    var self = this;
+
+    self.name = 'Update c object';
+    console.log(self);
+
+    var setName = function(newName) {
+        self.name = newName;
+    }
+
+    setName('updated again the c object');
+    console.log(self);
+
+  }
+
+}
+
+
+c.log();
