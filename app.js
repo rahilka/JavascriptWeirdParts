@@ -1,17 +1,23 @@
-var arr = [
-  1,
-  false,
-  {
-    name: 'Rahilka',
-    address: 'Negotino'
-  },
-  function(name) {
-    var greeting = 'Hello';
-    console.log(greeting + ' ' + name);
-  },
-  "hello"
-];
+  function greet(firstname, lastname, language, ...other) {
 
-console.log(arr);
+    language = language || 'en';
 
-arr[3](arr[2].name);
+    if(arguments.length === 0) {
+      console.log('Missing parameters');
+      console.log('------------');
+      return;
+    }
+
+    console.log(firstname);
+    console.log(lastname);
+    console.log(language);
+    console.log(arguments);
+    console.log(arguments[0]);
+    console.log('-----------');
+
+  }
+
+  greet();
+  greet('Rahilka');
+  greet('Rahilka', 'Simonova');
+  greet('Rahilka', 'Simonova', 'Macedonian', 'Negotino', 'sdasasasdds');
