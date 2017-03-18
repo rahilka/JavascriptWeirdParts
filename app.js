@@ -1,23 +1,23 @@
-  function greet(firstname, lastname, language, ...other) {
+function greet(firstname, lastname, language) {
 
-    language = language || 'en';
+  language = language || 'en';
 
-    if(arguments.length === 0) {
-      console.log('Missing parameters');
-      console.log('------------');
-      return;
-    }
-
-    console.log(firstname);
-    console.log(lastname);
-    console.log(language);
-    console.log(arguments);
-    console.log(arguments[0]);
-    console.log('-----------');
-
+  if(language === 'en') {
+    console.log('Hello ' + firstname + ' ' + lastname);
   }
 
-  greet();
-  greet('Rahilka');
-  greet('Rahilka', 'Simonova');
-  greet('Rahilka', 'Simonova', 'Macedonian', 'Negotino', 'sdasasasdds');
+  if(language === 'es') {
+    console.log('Hola ' + firstname + ' ' + lastname);
+  }
+}
+
+function greetEnglish(firstname, lastname) {
+  greet(firstname, lastname, 'en');
+}
+
+function greetSpanish(firstname, lastname) {
+  greet(firstname, lastname, 'es');
+}
+
+greetEnglish('Rahilka', 'Simonova');
+greetSpanish('Rahilka', 'Simonova');
