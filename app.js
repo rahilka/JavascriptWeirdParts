@@ -1,13 +1,29 @@
-var arr = [1,2,3];
+var person = {
 
-var arr1 = _.map(arr, function(item){
-  return item * 3
-});
-console.log(arr1);
+  firstname: 'Default',
+  lastname: 'Default',
+  getFullName: function() {
+    return this.firstname + ' ' + this.lastname;
+  }
 
-var arr2 = _.filter([1,2,3,4,5,6,7,8,9],
-  function(item) {
-    return item % 2 === 0
-  });
+}
 
-  console.log(arr2);
+var john = {
+  firstname: 'John',
+  lastname: 'Doe'
+}
+
+//don't do this EVER!!!
+//for demo purposes only!!!
+
+john.__proto__ = person;
+console.log(john.getFullName());
+console.log(john.firstname);
+
+var jane = {
+  firstname: 'Jane'
+}
+
+jane.__proto__ = person;
+console.log(jane.getFullName());
+//expected: Jane Default
