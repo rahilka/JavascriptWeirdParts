@@ -1,10 +1,13 @@
-String.prototype.isLengthGreaterThan = function(limit) {
-  return this.length > limit;
+Array.prototype.myCustom = 'cool';
+
+var arr = ['John', 'Jane', 'Jim'];
+
+for (var prop in arr) {
+  console.log(prop + ': ' + arr[prop]);
+  console.log('-----------');
 }
 
-console.log("Jogn".isLengthGreaterThan(3));
 
-
-Number.prototype.isPositive = function() {
-  return this>0;
+for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
 }
