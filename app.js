@@ -1,34 +1,25 @@
-class Person {
-
-  constructor(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+var people = [
+  {
+    //rahilka object
+    firstname: 'Rahilka',
+    lastname: 'Simonova',
+    addresses: [
+      '111 Main St',
+      '222 Third St'
+    ]
+  },
+  {
+    //ljubica object
+    firstname: 'Ljubica',
+    lastname: 'Simonova',
+    addresses: [
+      '333 Main St',
+      '444 Third St'
+    ],
+    greet: function() {
+      return 'Hello!';
+    }
   }
+];
 
-  greet() {
-    return 'Hi ' + this. firstname;
-  }
-
-}
-
-var rahilka = new Person('Rahilka', 'Simonova');
-console.log(rahilka);
-console.log(rahilka.greet());
-
-//extends set the Prototype
-class InformalPerson extends Person {
-
-  constructor(firstname, lastname) {
-    //super = call the constructor of the object of my prototype
-    super(firstname, lastname);
-  }
-
-  greet() {
-    return 'Yo ' + firstname;
-  }
-
-}
-
-var ljubica = new InformalPerson('Ljubica');
-console.log(ljubica);
-console.log(ljubica.greet());
+console.log(people);
