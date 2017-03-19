@@ -1,25 +1,26 @@
-var people = [
-  {
-    //rahilka object
-    firstname: 'Rahilka',
-    lastname: 'Simonova',
-    addresses: [
-      '111 Main St',
-      '222 Third St'
-    ]
-  },
-  {
-    //ljubica object
-    firstname: 'Ljubica',
-    lastname: 'Simonova',
-    addresses: [
-      '333 Main St',
-      '444 Third St'
-    ],
-    greet: function() {
-      return 'Hello!';
-    }
-  }
-];
+var a = 3;
+console.log(typeof a); //number
 
-console.log(people);
+var b = 'Hello!';
+console.log(typeof b); //string
+
+var c = {};
+console.log(typeof c); //object
+
+var d = [];
+console.log(typeof d); //object
+console.log(Object.prototype.toString.call(d)); // ???
+
+function Person (name) {
+  this.name = name;
+}
+
+var e = new Person('Rahilka');
+console.log(typeof e); //object
+console.log(e instanceof Person); //true
+
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object ???
+
+var z = function() {};
+console.log(typeof z); //function???
