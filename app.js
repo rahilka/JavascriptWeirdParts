@@ -1,13 +1,24 @@
-Array.prototype.myCustom = 'cool';
-
-var arr = ['John', 'Jane', 'Jim'];
-
-for (var prop in arr) {
-  console.log(prop + ': ' + arr[prop]);
-  console.log('-----------');
+//polyfill
+if(!Object.create) {
+  Object.create = function(obj) {
+    if(arguments.length > ) {
+      throw new Error('Object.create implementation only accepts the first parameter');
+    }
+    function F() {}
+    F.prototype = obj;
+    return new F();
+  }
 }
 
-
-for (var i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+var person = {
+  firstname: 'Rahilka',
+  lastname: 'Simonova',
+  greet: function () {
+    return 'Hi ' + this.firstname;
+  }
 }
+
+var john = Object.create(person);
+john.firstname = 'Ljubica';
+john.lastname = 'Simonova';
+console.log(john);
