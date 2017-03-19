@@ -1,24 +1,34 @@
-//polyfill
-if(!Object.create) {
-  Object.create = function(obj) {
-    if(arguments.length > ) {
-      throw new Error('Object.create implementation only accepts the first parameter');
-    }
-    function F() {}
-    F.prototype = obj;
-    return new F();
+class Person {
+
+  constructor(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
   }
+
+  greet() {
+    return 'Hi ' + this. firstname;
+  }
+
 }
 
-var person = {
-  firstname: 'Rahilka',
-  lastname: 'Simonova',
-  greet: function () {
-    return 'Hi ' + this.firstname;
+var rahilka = new Person('Rahilka', 'Simonova');
+console.log(rahilka);
+console.log(rahilka.greet());
+
+//extends set the Prototype
+class InformalPerson extends Person {
+
+  constructor(firstname, lastname) {
+    //super = call the constructor of the object of my prototype
+    super(firstname, lastname);
   }
+
+  greet() {
+    return 'Yo ' + firstname;
+  }
+
 }
 
-var john = Object.create(person);
-john.firstname = 'Ljubica';
-john.lastname = 'Simonova';
-console.log(john);
+var ljubica = new InformalPerson('Ljubica');
+console.log(ljubica);
+console.log(ljubica.greet());
