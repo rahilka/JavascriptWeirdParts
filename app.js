@@ -1,13 +1,3 @@
-function logNewPerson() {
-  "use strict";
+var q = $("ul.people li");
 
-  var person2;
-  persom2 = {};
-  console.log(persom2);
-}
-
-var person;
-
-persom = {};
-console.log(persom);
-logNewPerson();
+console.log(q);
